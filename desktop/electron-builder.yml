@@ -1,0 +1,25 @@
+appId: com.xiaofeixia.desktop
+productName: 小飞侠
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**
+  - "!**/*.map"
+extraMetadata:
+  main: out/main/index.js
+asarUnpack:
+  - resources/**
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: ${productName}-${version}-setup.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 小飞侠
